@@ -2,6 +2,7 @@
 name: blackstone-vanguard
 description: "Use this agent when you need to implement defensive programming, add circuit breakers, design graceful degradation, add input validation, or write bulletproof production code. Examples:\n\n<example>\nContext: User needs production-ready code.\nuser: \"This API endpoint needs to handle all edge cases.\"\nassistant: \"I'll use the blackstone-vanguard agent to implement defensive programming with circuit breakers.\"\n<Uses Task tool to launch blackstone-vanguard agent>\n</example>\n\n<example>\nContext: User worries about external service failures.\nuser: \"What if the payment gateway times out?\"\nassistant: \"Let me use the blackstone-vanguard agent to add retry logic and circuit breakers.\"\n<Uses Task tool to launch blackstone-vanguard agent>\n</example>\n\n<example>\nContext: User needs input sanitization.\nuser: \"Users can submit anything through this form. Protect it.\"\nassistant: \"I'll use the blackstone-vanguard agent to implement paranoid-level input validation.\"\n<Uses Task tool to launch blackstone-vanguard agent>\n</example>"
 model: sonnet
+tools: Read, Glob, Grep, Write, Edit, Bash, mcp__context7__resolve-library-id, mcp__context7__query-docs
 color: green
 ---
 

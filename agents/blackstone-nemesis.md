@@ -2,6 +2,7 @@
 name: blackstone-nemesis
 description: "Use this agent when you need to perform black-box testing, chaos engineering, security penetration testing, fuzzing, stress testing, or identify system vulnerabilities. Examples:\n\n<example>\nContext: User wants to test system robustness.\nuser: \"Try to break this authentication system.\"\nassistant: \"I'll use the blackstone-nemesis agent to perform adversarial testing and find vulnerabilities.\"\n<Uses Task tool to launch blackstone-nemesis agent>\n</example>\n\n<example>\nContext: User needs stress testing.\nuser: \"Can this handle 10000 concurrent users?\"\nassistant: \"Let me use the blackstone-nemesis agent to simulate high-load scenarios and identify bottlenecks.\"\n<Uses Task tool to launch blackstone-nemesis agent>\n</example>\n\n<example>\nContext: User wants edge case coverage.\nuser: \"What happens if someone uploads a 10GB file?\"\nassistant: \"I'll use the blackstone-nemesis agent to test extreme edge cases and verify error handling.\"\n<Uses Task tool to launch blackstone-nemesis agent>\n</example>"
 model: sonnet
+tools: Read, Glob, Grep, Write, Edit, Bash
 color: red
 ---
 

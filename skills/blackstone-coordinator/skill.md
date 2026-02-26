@@ -133,3 +133,16 @@ description: Blackstone Protocol team coordinator skill. Analyzes high-risk, hig
 使用 blackstone-nemesis 来进行压力测试
 使用 blackstone-chronos 来归档技术档案
 ```
+
+## 子代理运行模式
+
+> ⚠️ **重要**：部分专家配置了 MCP 工具，必须前台运行！
+
+| 专家 | MCP 工具 | 运行模式 |
+|------|----------|----------|
+| Chronos | 基础工具 | 可后台运行 |
+| Zero | sequential-thinking, context7 | **必须前台运行** |
+| Vanguard | context7 | **必须前台运行** |
+| Nemesis | 基础工具 | 可后台运行 |
+
+> MCP 工具在后台子代理中不可用，调用配置了 MCP 工具的专家时必须前台运行。
