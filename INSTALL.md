@@ -1,130 +1,222 @@
-# Blackstone（黑石协议）- 安装指南
+# Blackstone Team 安装指南
 
-## 前置条件
+本指南将帮助你完成 Blackstone（黑石协议）团队的安装和配置。
 
-- Claude Code CLI 已安装
-- 配置目录: `~/.claude/` (Windows: `C:\Users\[用户名]\.claude\`)
+## 📋 前置要求
 
-## 自动安装（已完成）
+- Claude Code 已安装并正常运行
+- 对 Claude Skills 和 Agents 有基本了解
+- 有访问本地文件系统的权限
 
-团队配置文件已自动安装到以下位置：
+## 🚀 快速安装
 
-```
-C:\Users\29493\.claude\
-├── agents\
-│   ├── blackstone-chronos.md      ✅ 已安装
-│   ├── blackstone-zero.md         ✅ 已安装
-│   ├── blackstone-vanguard.md     ✅ 已安装
-│   └── blackstone-nemesis.md      ✅ 已安装
-└── skills\
-    └── blackstone-coordinator\
-        └── skill.md               ✅ 已安装
-```
+### 方式一：手动安装（推荐）
 
-## 手动安装（如需在其他机器安装）
-
-### 步骤1: 复制 Agents
+1. **复制配置包到用户目录**
 
 ```bash
-# Windows (Git Bash)
-cp -r blackstone-team/agents/*.md ~/.claude/agents/
+# 复制整个 blackstone-team 文件夹到你的 Claude skills 目录
+# Windows: C:\Users\[用户名]\.claude\skills\
+# macOS/Linux: ~/.claude/skills/
 
-# macOS / Linux
-cp -r blackstone-team/agents/*.md ~/.claude/agents/
+# 复制 agents 到 agents 目录
+# Windows: C:\Users\[用户名]\.claude\agents\
+# macOS/Linux: ~/.claude/agents/
 ```
 
-### 步骤2: 复制 Skills
+2. **验证文件结构**
+
+确保以下文件存在：
+
+```
+# Skill（协调器）
+.claude/skills/blackstone-coordinator/skill.md
+
+# Agents（专家）
+.claude/agents/blackstone-zero.md
+.claude/agents/blackstone-vanguard.md
+.claude/agents/blackstone-nemesis.md
+.claude/agents/blackstone-chronos.md
+```
+
+3. **重启 Claude Code**
+
+重新启动 Claude Code 以加载新配置。
+
+### 方式二：使用安装脚本
+
+在配置包根目录运行：
 
 ```bash
-# Windows (Git Bash)
-cp -r blackstone-team/skills/blackstone-coordinator ~/.claude/skills/
+# Windows (PowerShell)
+.\install.ps1
 
-# macOS / Linux
-cp -r blackstone-team/skills/blackstone-coordinator ~/.claude/skills/
+# macOS/Linux (Bash)
+chmod +x install.sh
+./install.sh
 ```
 
-### 步骤3: 重启 Claude Code
+## ✅ 验证安装
 
-```bash
-# 重启 Claude Code CLI
-claude
-```
+安装完成后，可以通过以下方式验证：
 
-## 验证安装
+### 1. 检查 Skill 是否加载
 
-### 方法1: 检查文件存在
-
-```bash
-# 检查 agents
-ls ~/.claude/agents/blackstone-*.md
-
-# 检查 skills
-ls ~/.claude/skills/blackstone-coordinator/skill.md
-```
-
-### 方法2: 测试触发
-
-在 Claude Code 中输入以下命令测试：
+在 Claude Code 中输入：
 
 ```
-# 测试协调器
-/blackstone-coordinator 帮我设计一个防弹级的 API 接口
-
-# 测试专家
-使用 blackstone-zero 来分析这个架构
-使用 blackstone-vanguard 来添加防御性代码
-使用 blackstone-nemesis 来测试这个系统
-使用 blackstone-chronos 来记录技术决策
+/blackstone-coordinator
 ```
 
-## 触发关键词速查
+应该能看到 Blackstone 协调器的帮助信息。
 
-### 协调器触发词
-- "防弹级代码"、"生产级"、"零熵增"
-- "高复杂度"、"核心业务"、"攻坚"
+### 2. 测试专家 Agent
 
-### Chronos 触发词
-- "技术决策"、"ADR"、"技术债务"
-- "文档"、"归档"、"检查清单"
+在 Claude Code 中尝试：
 
-### Zero 触发词
-- "架构设计"、"设计模式"、"DDD"
-- "解耦"、"熵减"、"复杂度"
-
-### Vanguard 触发词
-- "防御性编程"、"熔断"、"降级"
-- "输入验证"、"异常处理"
-
-### Nemesis 触发词
-- "黑盒测试"、"混沌工程"、"压力测试"
-- "攻击测试"、"边界测试"
-
-## 卸载
-
-如需卸载，删除以下文件：
-
-```bash
-# 删除 agents
-rm ~/.claude/agents/blackstone-*.md
-
-# 删除 skills
-rm -rf ~/.claude/skills/blackstone-coordinator
+```
+使用 blackstone-zero 子代理执行一个简单的架构设计任务
 ```
 
-## 故障排除
+应该能看到 Zero 架构师开始工作。
 
-### Q: 触发关键词不生效？
-A: 确保文件已正确放置在配置目录，并重启 Claude Code。
+## 📁 文件结构说明
 
-### Q: 专家没有按预期响应？
-A: 检查 agent 文件的 YAML frontmatter 格式是否正确。
+```
+blackstone-team/
+├── README.md                          # 本文件
+├── INSTALL.md                         # 安装指南
+├── agents/                            # 专家 Agent 配置
+│   ├── blackstone-chronos.md          # 资产总管
+│   ├── blackstone-zero.md             # 多维架构师
+│   ├── blackstone-vanguard.md         # 铁壁编码者
+│   └── blackstone-nemesis.md          # 黑盒破坏者
+└── skills/                            # 协调器 Skill
+    └── blackstone-coordinator/
+        └── skill.md                   # 协调器
+```
 
-### Q: 协调器没有触发专家？
-A: 协调器需要明确的任务描述，尝试使用更具体的触发词。
+## 🔧 配置说明
 
-## 版本信息
+### 协调器 (blackstone-coordinator)
 
-- 团队名称: Blackstone（黑石协议）
-- 版本: 1.0.0
-- 创建日期: 2026-02-14
-- 专家数量: 4位
+- **文件位置**: `skills/blackstone-coordinator/skill.md`
+- **触发方式**: `/blackstone-coordinator [任务描述]`
+- **核心职责**: 任务规划、专家协调、结果汇总
+
+### 专家 Agents
+
+| 代号 | 文件名 | 核心职责 | MCP工具 |
+|------|--------|----------|---------|
+| Zero | blackstone-zero.md | 架构设计、熵减 | sequential-thinking, context7 |
+| Vanguard | blackstone-vanguard.md | 防御编码、熔断器 | context7 |
+| Nemesis | blackstone-nemesis.md | 黑盒测试、混沌工程 | 无 |
+| Chronos | blackstone-chronos.md | ADR、技术债务 | 无 |
+
+## 📊 工作流程
+
+```
+用户请求
+    ↓
+协调器分析
+    ↓
+Need 沟通? ──Yes──→ AskUserQuestion
+    ↓ No
+规划流程
+    ↓
+Need MCP? ──Yes──→ 征求用户授权
+    ↓ No
+依次触发专家
+    ↓
+Zero → Vanguard → Nemesis → Chronos
+    ↓
+汇总输出
+    ↓
+交付用户
+```
+
+## 🎯 使用示例
+
+### 示例1：完整流程
+
+```
+用户: /blackstone-coordinator 设计一个防弹级的支付回调接口
+
+协调器: [需求沟通] 确认支付场景、安全要求...
+协调器: [流程规划] 需要完整接力流程
+协调器: [MCP授权] Zero可能需要查询架构最佳实践，是否授权？
+用户: 同意授权
+协调器: [触发专家] 依次触发 Zero → Vanguard → Nemesis → Chronos
+协调器: [汇总输出] 生成最终交付报告
+```
+
+### 示例2：单独使用专家
+
+```
+用户: 使用 blackstone-zero 子代理设计用户认证模块的架构
+
+Zero: [分析需求] 用户认证涉及身份验证、权限管理...
+Zero: [架构设计] 采用DDD切割用户上下文...
+Zero: [创建INDEX] 生成架构决策指令
+```
+
+## 🛠️ 故障排查
+
+### 问题1：协调器无法触发
+
+**可能原因**：
+- Skill 文件未正确放置
+- 文件名或路径不正确
+
+**解决方案**：
+1. 检查 `skills/blackstone-coordinator/skill.md` 是否存在
+2. 确认文件名完全匹配（区分大小写）
+3. 重启 Claude Code
+
+### 问题2：专家 Agent 无法触发
+
+**可能原因**：
+- Agent 文件未正确放置
+- MCP 工具未授权导致执行失败
+
+**解决方案**：
+1. 检查 `agents/blackstone-*.md` 是否存在
+2. 确认协调器已正确授权 MCP 工具
+3. 查看错误日志获取详细信息
+
+### 问题3：MCP 工具无法使用
+
+**可能原因**：
+- 协调器未授权
+- MCP 服务未启动
+
+**解决方案**：
+1. 确认协调器在触发指令中包含 `🔓 MCP 授权`
+2. 检查 MCP 服务是否正常运行
+3. 查看具体工具名称是否正确
+
+## 📚 进一步学习
+
+- [Claude Code 官方文档](https://docs.anthropic.com/claude-code)
+- [Skills 开发指南](https://docs.anthropic.com/claude-code/skills)
+- [Agents 配置参考](https://docs.anthropic.com/claude-code/agents)
+
+## 🤝 获取帮助
+
+如果遇到问题：
+
+1. 查看本文档的故障排查章节
+2. 检查 GitHub Issues
+3. 在社区论坛提问
+
+## 📝 更新记录
+
+| 版本 | 日期 | 说明 |
+|------|------|------|
+| 3.0 | 2026-03-01 | 使用 super-team-builder v3.0 重构 |
+| 2.0 | 2026-02-28 | 优化协调器和专家配置 |
+| 1.0 | 2026-02-01 | 初始版本 |
+
+---
+
+**安装完成后，你就可以开始使用 Blackstone 团队处理高危、高复杂度的软件工程任务了！**
