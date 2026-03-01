@@ -43,30 +43,6 @@
 
 重新启动 Claude Code 以加载新配置。
 
-### 方式二：使用安装脚本
-
-在配置包根目录运行：
-
-```bash
-# Windows (PowerShell)
-.\install.ps1
-
-# macOS/Linux (Bash)
-chmod +x install.sh
-./install.sh
-```
-
-## ✅ 验证安装
-
-安装完成后，可以通过以下方式验证：
-
-### 1. 检查 Skill 是否加载
-
-在 Claude Code 中输入：
-
-```
-/blackstone-coordinator
-```
 
 应该能看到 Blackstone 协调器的帮助信息。
 
