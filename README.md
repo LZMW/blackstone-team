@@ -1,12 +1,14 @@
-# Blackstone（黑石协议）- 顶级软件特遣队
+# Blackstone Protocol（黑石协议）- 顶级软件特遣队
 
 ## 概述
 
-**Blackstone（黑石协议）** 是一个被指派处理 **高危、高复杂度、核心业务攻坚** 任务的顶级软件特遣队。
+**Blackstone Protocol（黑石协议）** 是一个被指派处理 **高危、高复杂度、核心业务攻坚** 任务的顶级软件特遣队。
 
 核心KPI：**鲁棒性 (Robustness) > 简洁性 (Simplicity) > 性能 (Performance)**
 
 交付即意味着 **"防弹级 (Bulletproof)"** 和 **"零熵增 (Zero Entropy)"**。
+
+---
 
 ## 🚀 快速开始
 
@@ -25,26 +27,32 @@
 
 > 💡 **提示**：使用 `/blackstone-coordinator` 是最推荐的触发方式，协调器会自动按接力模式分配任务。
 
-## 层级架构
+---
+
+## 📊 团队架构
 
 ```
 Blackstone Coordinator（协调器）
-├── Chronos（资产总管）- 记录/进度/技术档案
 ├── Zero（多维架构师）- 熵减/结构设计
 ├── Vanguard（铁壁编码者）- 防御性编程
-└── Nemesis（黑盒破坏者）- 极端审查/黑盒测试
+├── Nemesis（黑盒破坏者）- 极端审查/黑盒测试
+└── Chronos（资产总管）- 记录/进度/技术档案
 ```
 
-## 团队成员
+---
+
+## 👥 团队成员
 
 | 代号 | 角色 | Agent 名称 | 核心定位 | 座右铭 |
 |------|------|-----------|----------|--------|
-| **Chronos** | 资产总管 | blackstone-chronos | 团队的"大脑"与"黑匣子" | 没有文档的代码是幽灵，未被记录的决策是地雷 |
 | **Zero** | 多维架构师 | blackstone-zero | 团队的"手术刀" | 复杂度是唯一的敌人。如果它太复杂，那就是设计错了 |
 | **Vanguard** | 铁壁编码者 | blackstone-vanguard | 团队的"盾牌" | 信任是美好的品德，但在代码里，信任就是漏洞 |
 | **Nemesis** | 黑盒破坏者 | blackstone-nemesis | 团队的"假想敌" | 如果你不自己打断腿，生产环境会帮你打断脖子 |
+| **Chronos** | 资产总管 | blackstone-chronos | 团队的"大脑"与"黑匣子" | 没有文档的代码是幽灵，未被记录的决策是地雷 |
 
-## 接力执行模式 (Relay Execution)
+---
+
+## 🔄 接力执行模式 (Relay Execution)
 
 ```
 ┌─────────────────────────────────────────────────────────┐
@@ -53,20 +61,26 @@ Blackstone Coordinator（协调器）
 │                                                         │
 │  1. Zero（架构师）                                       │
 │     └→ 解构问题，定义"最小熵"架构路径                    │
+│         → 输出: .blackstone/phases/01_zero/INDEX.md     │
 │                                                         │
 │  2. Vanguard（编码者）                                   │
 │     └→ 执行编码，注入所有防御手段                        │
+│         → 输出: .blackstone/phases/02_vanguard/INDEX.md │
 │                                                         │
 │  3. Nemesis（测试官）                                    │
 │     └→ 逻辑压力测试，指出潜在崩溃点                      │
+│         → 输出: .blackstone/phases/03_nemesis/INDEX.md  │
 │                                                         │
 │  4. Chronos（档案员）                                    │
 │     └→ 归档最终产物，生成技术档案                        │
+│         → 输出: .blackstone/phases/04_chronos/INDEX.md  │
 │                                                         │
 └─────────────────────────────────────────────────────────┘
 ```
 
-## 任务类型映射
+---
+
+## 🗂️ 任务类型映射
 
 | 任务类型 | 触发关键词 | 主导专家 |
 |----------|-----------|----------|
@@ -76,7 +90,43 @@ Blackstone Coordinator（协调器）
 | 技术归档 | ADR、技术债务、文档 | Chronos |
 | 完整攻坚 | 生产级、防弹级、零熵增 | 全员接力 |
 
-## 工作假设
+---
+
+## 📦 产出目录结构
+
+```
+{项目}/.blackstone/
+├── phases/                    # 阶段产出
+│   ├── 01_zero/              # 架构设计
+│   │   ├── INDEX.md          # 阶段索引
+│   │   └── *.md              # 架构设计文件
+│   ├── 02_vanguard/          # 防御编码
+│   │   ├── INDEX.md
+│   │   └── *.md              # 代码实现文件
+│   ├── 03_nemesis/           # 攻击测试
+│   │   ├── INDEX.md
+│   │   └── *.md              # 测试报告文件
+│   └── 04_chronos/           # 技术归档
+│       ├── INDEX.md
+│       └── *.md              # 归档文件
+├── inbox.md                   # 统一消息收件箱
+└── summary.md                 # 最终项目汇总
+```
+
+---
+
+## 🔧 MCP 能力
+
+| 代号 | 可授权的MCP工具 | 授权条件 |
+|------|-----------------|----------|
+| Zero | mcp__sequential-thinking__*, mcp__context7__* | 复杂架构设计需要深度思考或查询最佳实践时 |
+| Vanguard | mcp__context7__* | 需要查询防御编程最佳实践时 |
+| Nemesis | 无 | 不使用MCP |
+| Chronos | 无 | 不使用MCP |
+
+---
+
+## ⚙️ 工作假设
 
 本团队假设：
 - 所有 API 会超时
@@ -84,7 +134,9 @@ Blackstone Coordinator（协调器）
 - 所有内存会溢出
 - 所有用户会输入乱码
 
-## 交付物标准
+---
+
+## 📋 交付物标准
 
 ### 战术执行日志
 ```
@@ -102,43 +154,31 @@ Blackstone Coordinator（协调器）
 | 验证清单 (Checklist) | 上线前必须检查的配置项 |
 | 复杂度审计 | 核心函数的圈复杂度评估 |
 
-## 使用示例
+---
 
-```
-用户: /blackstone-coordinator 设计一个支付回调接口
-
-→ Zero: 解构问题，定义架构路径
-  "采用策略模式处理不同支付渠道，使用 DDD 定义聚合边界"
-
-→ Vanguard: 注入防御措施
-  "添加幂等性检查、签名验证、超时重试、熔断器"
-
-→ Nemesis: 攻击测试
-  "模拟重复回调、篡改金额、并发请求场景"
-
-→ Chronos: 归档产物
-  "生成 ADR、技术债务清单、部署检查表"
-```
-
-## 安装方法
+## 📥 安装方法
 
 详见 [INSTALL.md](./INSTALL.md)
 
-## 文件清单
+---
+
+## 📁 文件清单
 
 ```
 blackstone-team/
 ├── README.md                          # 团队说明
 ├── INSTALL.md                         # 安装指南
 ├── agents/
-│   ├── blackstone-chronos.md          # 资产总管
 │   ├── blackstone-zero.md             # 多维架构师
 │   ├── blackstone-vanguard.md         # 铁壁编码者
-│   └── blackstone-nemesis.md          # 黑盒破坏者
+│   ├── blackstone-nemesis.md          # 黑盒破坏者
+│   └── blackstone-chronos.md          # 资产总管
 └── skills/
     └── blackstone-coordinator/
         └── skill.md                   # 协调器
 ```
+
+---
 
 ## License
 
@@ -148,10 +188,12 @@ MIT
 
 ## 更新日志
 
-### 2026-03-01 (v3.0)
-- 🎉 使用 super-team-builder v3.0 模板全面重构
-- ✅ 优化协调器核心原则（委托优先、自然语言触发）
-- ✅ 完善调度指令理解章节（标准化触发格式）
-- ✅ 增强MCP三级授权机制（🔴必要/🟡推荐/🟢可选）
-- ✅ 统一INDEX.md格式（包含下一步建议）
-- ✅ 规范信息传递机制（链式+📂📋指令格式）
+### 2026-03-02 (v4.0)
+- 🎉 使用 super-team-builder 新模板重构
+- ✅ 优化协调器和专家代理配置
+- 📚 完善信息传递机制和MCP授权规范
+
+### 2026-02-28
+- 🎉 团队配置更新到最新版本
+- ✅ 优化了协调器和专家代理配置
+- 📚 完善了安装指南和使用文档
